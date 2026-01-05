@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global theme variables and Tailwind-friendly component styles */
+:root {
+  --color-bg: 248 250 252;
+  --color-card: 255 255 255;
+  --color-primary-from: 79 70 229;
+  --color-primary-to: 139 92 246;
+  --color-muted: 100 116 139;
+}
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Inter, system-ui, -apple-system,
+      'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    background-color: rgb(var(--color-bg));
+    color: rgb(15 23 42);
+    line-height: 1.45;
+  }
+
+  img { display: block; max-width: 100%; }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-md
+           font-semibold shadow-sm transition-colors duration-150;
+    gap: 0.5rem;
+  }
+
+  .btn-primary {
+    background-image: linear-gradient(
+      90deg,
+      rgb(var(--color-primary-from)),
+      rgb(var(--color-primary-to))
+    );
+    color: rgb(253, 233, 218);
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-slate-700 border border-transparent;
+  }
+
+  .card {
+    @apply rounded-lg shadow-sm p-4 bg-white;
+  }
+}
+.perspective-1000 {
+  perspective: 1000px;
+}
